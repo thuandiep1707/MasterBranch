@@ -22,7 +22,7 @@ const localizer = dateFnsLocalizer({
 });
 
 const App = () => {
-  console.log(window.innerWidth)
+  const checkWidth = window.innerWidth > 800
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [modalAddEvent, setModalAddEvent] = useState(false)
   const [adsideRender, setAsideRender] = useState('list')
@@ -107,8 +107,9 @@ const App = () => {
             color: isSelected ? 'white' : '',
             margin: '5px',
             borderRadius: '50%',
-            padding: '10px 12px',
+            padding: checkWidth ? '10px 12px' : '4px 5.5px',
             cursor: 'pointer',
+            fontSize: checkWidth ? '14px' : '10px', 
           }}
           onClick={() => {handleDateClick(date); setAsideRender('list')}}
         >
@@ -142,7 +143,7 @@ const App = () => {
           AddEvent={() => setModalAddEvent(true)}
           localizer={localizer}
           events={events}
-          formats={{weekdayFormat: (date) => date.toLocaleDateString('en-US', { weekday: 'short' })}}
+          formats={{weekdayFormat: (date) => date.toLocaleDateString('en-US', { weekday: 'short'})}}
           components={{
             toolbar: CustomToolbar,
             month:{

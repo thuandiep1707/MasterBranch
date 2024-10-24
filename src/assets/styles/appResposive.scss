@@ -3,14 +3,16 @@
         flex-direction: column;
         justify-content: start;
         align-items: center;
-        padding-bottom: 50px;
+        padding-bottom: 30px;
         height: unset;
         min-height: 100vh;
         .calendar-around{
+            width: 300px;
+            padding: 0;
             .calendar{
                 background: white;
-                margin-top: 50px;
-                max-width: 600px;
+                margin: 30px 0 10px;
+                max-width: 300px;
                 height: unset;
                 .custom-toolbar{
                     display: flex;
@@ -21,10 +23,10 @@
                     width: 100%;
                     .btn-nav{
                         border: unset;
-                        font-size: 20px;
+                        font-size: 12px;
                     }
                     &_label{
-                        font-size: 26px;
+                        font-size: 16px;
                     }
                 }
                 .rbc-event, .rbc-show-more {
@@ -34,7 +36,7 @@
                 .rbc-month-view .rbc-month-row,
                 .rbc-day-bg,
                 .rbc-day-bg:last-child{
-                height: 50px;
+                height: 30px;
                 border: none;
                 background-color: unset !important;
 
@@ -42,61 +44,131 @@
                 .rbc-row{
                     justify-content: space-evenly;
                     .rbc-date-cell{
-                        flex: 0 1 50px;
+                        flex: 0 1 30px;
                     }
                 }
                 .rbc-month-row{
-                    flex: 0 1 50px;
-                    height: 50px;
+                    flex: 0 1 30px;
+                    height: 30px;
                 }
                 .cell-date{
-                    width: 50px;
-                    height: 50px;
+                    width: 30px;
+                    height: 30px;
                 }
                 .rbc-month-view{
                     margin-bottom: 20px;
                     border: none;
                 }
                 .rbc-month-view .rbc-row {
-                    height: 50px;
+                    height: 30px;
                     border: none;
                 }
                 .rbc-month-view .rbc-month-row .rbc-day-bg {
-                    height: 50px;
+                    height: 30px;
                 }
                 .rbc-day-bg {
-                    width: 50px;
-                    max-width: 50px;
+                    width: 30px;
+                    max-width: 30px;
                 }
                 .rbc-month-header{
                     justify-content: space-evenly;
                     margin-top: 10px;
                 }
                 .rbc-header{
-                    flex: 0 1 50px;
+                    flex: 0 1 30px;
                     border: none;
+                    font-size: 10px !important;
                 }
             }
         }
         .list-event-container{
             margin-top: 10px;
-            width: 600px;
+            width: 300px;
             .list-event{
-                width: 600px;
+                width: 300px;
+                &_title{
+                    font-size: 18px;
+                }
+                &_selectday{
+                    margin: 8px 0;
+                    font-size: 14px;
+                }
+                &_des{
+                    &_item{
+                        .item-header{
+                            .title{
+                                font-size: 12px;
+                                margin-bottom: 6px;
+                            }
+                            .time{
+                                font-size: 10px;
+                            }
+                        }
+                        .item-client{
+                            a{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
             }
         }
         .detail-event-container{
             margin-top: 20px;
-            width: 600px;
+            width: 300px;
             .detail-event{
                 background: white;
                 padding: 20px 20px;
-                width: 600px;
+                width: 300px;
                 &_avatar{
-                    width: 180px;
+                    width: 120px;
                     aspect-ratio: 1;
                     border-radius: 100%;
                     margin: 20px auto;
+                }
+                &_title{
+                    font-size: 18px;
+                }
+                &_date, &_location, &_about{
+                    font-size: 12px;
+                }
+                &_btn{
+                    .btn{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .modal-around{
+            .add-event-modal{
+                width: 300px;
+                gap: 10px;
+
+                &_time{
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: start;
+                    gap: 5px;
+                    .label-end{
+                        margin: 0;
+                    }
+                }
+                input, textarea{
+                    padding: 10px 16px;
+                    border: 2px solid #0F4C81;
+                    border-radius: 6px;
+                    width: 100%;
+                    &[type=text]{
+                        margin-top: 0;
+                    }
+                    &:focus, &:active{
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+                textarea{
+                    margin-top: 0;
+                    height: 80px;
                 }
             }
         }
