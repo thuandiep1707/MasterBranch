@@ -105,9 +105,9 @@ const App = () => {
           style={{
             backgroundColor: isSelected ? '#0F4C81' : hasEvent ? '#e2f6ed' : '',
             color: isSelected ? 'white' : '',
-            margin: '5px',
             borderRadius: '50%',
-            padding: checkWidth ? '10px 12px' : '4px 5.5px',
+            width: checkWidth ? '40px' : '22px',
+            aspectRatio: 1,
             cursor: 'pointer',
             fontSize: checkWidth ? '14px' : '10px', 
           }}
