@@ -7,12 +7,12 @@
         height: unset;
         min-height: 100vh;
         .calendar-around{
-            width: 300px;
+            width: 400px;
             padding: 0;
             .calendar{
                 background: white;
                 margin: 30px 0 10px;
-                max-width: 300px;
+                max-width: 400px;
                 height: unset;
                 .custom-toolbar{
                     display: flex;
@@ -83,9 +83,9 @@
         }
         .list-event-container{
             margin-top: 10px;
-            width: 300px;
+            width: 400px;
             .list-event{
-                width: 300px;
+                width: 400px;
                 &_title{
                     font-size: 18px;
                 }
@@ -115,11 +115,11 @@
         }
         .detail-event-container{
             margin-top: 20px;
-            width: 300px;
+            width: 400px;
             .detail-event{
                 background: white;
                 padding: 20px 20px;
-                width: 300px;
+                width: 400px;
                 &_avatar{
                     width: 120px;
                     aspect-ratio: 1;
@@ -141,7 +141,7 @@
         }
         .modal-around{
             .add-event-modal{
-                width: 300px;
+                width: 400px;
                 gap: 10px;
 
                 &_time{
