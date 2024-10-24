@@ -1,0 +1,104 @@
+@media screen and (max-width: 800px) {
+    .app{
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding-bottom: 50px;
+        height: unset;
+        min-height: 100vh;
+        .calendar-around{
+            .calendar{
+                background: white;
+                margin-top: 50px;
+                max-width: 600px;
+                height: unset;
+                .custom-toolbar{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px;
+                    margin: unset;
+                    width: 100%;
+                    .btn-nav{
+                        border: unset;
+                        font-size: 20px;
+                    }
+                    &_label{
+                        font-size: 26px;
+                    }
+                }
+                .rbc-event, .rbc-show-more {
+                    display: none;
+                }
+                .rbc-month-view .rbc-row, 
+                .rbc-month-view .rbc-month-row,
+                .rbc-day-bg,
+                .rbc-day-bg:last-child{
+                height: 50px;
+                border: none;
+                background-color: unset !important;
+
+                }
+                .rbc-row{
+                    justify-content: space-evenly;
+                    .rbc-date-cell{
+                        flex: 0 1 50px;
+                    }
+                }
+                .rbc-month-row{
+                    flex: 0 1 50px;
+                    height: 50px;
+                }
+                .cell-date{
+                    width: 50px;
+                    height: 50px;
+                }
+                .rbc-month-view{
+                    margin-bottom: 20px;
+                    border: none;
+                }
+                .rbc-month-view .rbc-row {
+                    height: 50px;
+                    border: none;
+                }
+                .rbc-month-view .rbc-month-row .rbc-day-bg {
+                    height: 50px;
+                }
+                .rbc-day-bg {
+                    width: 50px;
+                    max-width: 50px;
+                }
+                .rbc-month-header{
+                    justify-content: space-evenly;
+                    margin-top: 10px;
+                }
+                .rbc-header{
+                    flex: 0 1 50px;
+                    border: none;
+                }
+            }
+        }
+        .list-event-container{
+            margin-top: 10px;
+            width: 600px;
+            .list-event{
+                width: 600px;
+            }
+        }
+        .detail-event-container{
+            margin-top: 20px;
+            width: 600px;
+            .detail-event{
+                background: white;
+                padding: 20px 20px;
+                width: 600px;
+                &_avatar{
+                    width: 180px;
+                    aspect-ratio: 1;
+                    border-radius: 100%;
+                    margin: 20px auto;
+                }
+            }
+        }
+    }
+}

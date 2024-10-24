@@ -5,7 +5,8 @@ import { format, parse, startOfWeek, getDay } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
 import CustomToolbar from './components/customs/CustomToolbar';
 import AddEvent from './components/modals/AddEvent';
-import './app.scss'
+import './assets/styles/app.scss';
+import './assets/styles/appResposive.scss';
 import ListEvent from './components/asides/ListEvent';
 import DetailEvent from './components/asides/DetailEvent';
 const locales = {
@@ -21,6 +22,7 @@ const localizer = dateFnsLocalizer({
 });
 
 const App = () => {
+  console.log(window.innerWidth)
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [modalAddEvent, setModalAddEvent] = useState(false)
   const [adsideRender, setAsideRender] = useState('list')
@@ -57,6 +59,28 @@ const App = () => {
       typeEvent: 'Event',
       clientAvatar: 'https://cellphones.com.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg',
       clientId: '0x89122dxdiag'
+    },
+    {
+      id: 4,
+      title: 'Chemistry Session with Mr. Lee',
+      start: new Date(2024, 9, 28, 18, 0),
+      end: new Date(2024, 9, 28, 19, 30),
+      location: 'Online',
+      about: '',
+      typeEvent: 'Event',
+      clientAvatar: 'https://cellphones.com.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg',
+      clientId: '0x89122dxdiag'
+    },
+    {
+      id: 5,
+      title: 'Chemistry Session with Mr. Lee',
+      start: new Date(2024, 9, 20, 18, 0),
+      end: new Date(2024, 9, 20, 19, 30),
+      location: 'Online',
+      about: '',
+      typeEvent: 'Event',
+      clientAvatar: 'https://cellphones.com.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg',
+      clientId: '0x89122dxdiag'
     }
   ]);
   useEffect(() => {
@@ -72,21 +96,40 @@ const App = () => {
     setEvents(prev => [...prev, {...data, id: prev.length}])
   }
   const CustomDateHeader = ({label, date}) => {
+    const hasEvent = events.some(event =>
+      event.start.toDateString() === date.toDateString()
+    );
     const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
     return (
         <p
           style={{
-            backgroundColor: isSelected ? '#0F4C81' : '',
+            backgroundColor: isSelected ? '#0F4C81' : hasEvent ? '#e2f6ed' : '',
             color: isSelected ? 'white' : '',
             margin: '5px',
             borderRadius: '50%',
-            padding: '5px 8px',
+            padding: '10px 12px',
             cursor: 'pointer',
           }}
           onClick={() => {handleDateClick(date); setAsideRender('list')}}
         >
           {label}
         </p>
+    );
+  };
+  const CustomDateCellWrapper = ({ value, children }) => {
+    const hasEvent = events.some(event =>
+      event.start.toDateString() === value.toDateString()
+    );
+    return (
+      <div
+      className='cell-date'
+        style={{
+          backgroundColor: hasEvent && window.innerWidth > 800 ? '#e2f6ed' : '',
+          cursor: 'pointer',
+        }}
+      >
+        {children} {/* Chèn nội dung của ngày */}
+      </div>
     );
   };
   return (
@@ -103,7 +146,9 @@ const App = () => {
           components={{
             toolbar: CustomToolbar,
             month:{
-              dateHeader: CustomDateHeader
+              dateHeader: CustomDateHeader,
+              dateCellWrapper: CustomDateCellWrapper,
+
             }
           }}
         />
