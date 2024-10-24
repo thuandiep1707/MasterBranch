@@ -107,6 +107,8 @@ const App = () => {
             color: isSelected ? 'white' : '',
             borderRadius: '50%',
             width: checkWidth ? '40px' : '22px',
+            textAlign: 'center',
+            lineHeight: checkWidth ? '40px' : '22px',
             aspectRatio: 1,
             cursor: 'pointer',
             fontSize: checkWidth ? '14px' : '10px', 
